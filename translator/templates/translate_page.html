@@ -1,83 +1,42 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
 	<title>Translate page</title>
-
-	<style type="text/css">
-		.flex-container{
-			display: flex;
-			justify-content: center;
-		}
-
-		textarea{
-			width: 100%;
-			height: 150px;
-			padding: 12px 20px;
-			box-sizing: border-box;
-			border: 2px solid #ccc;
-			border-radius: 4px;
-			background-color: #f8f8f8;
-			font-size: 16px;
-			resize: none;
-		}
-
-		.translate-button{
-			background-color: #04AA6D;
-			border: none;
-			color: white;
-			padding: 16px 32px;
-			text-decoration: none;
-			margin: 4px 2px;
-			cursor: pointer;
-			position: absolute;
-			right: 100px;
-		}
-
-		.container-1{
-			flex-grow: 4; 
-			margin-left: 100px;
-		}
-
-		.container-2{
-			flex-grow: 4; 
-			margin-right: 100px;
-		}
-
-		@media screen and (max-width: 900px) {
-			.flex-container{
-				flex-direction: column;
-				justify-content: flex-start;
-			}
-
-			.container-1, .container-2{
-				margin: 10px;
-			}
-
-			.translate-button{
-				right: 20px;
-			}
-		}
-	</style>
 </head>
 <body>
 	<h1>Translate page</h1>
-
 	<form action="{% url 'translate_page' %}" method="post" class="form_translate">
 		{% csrf_token %}
+		<div class="radio_checker_container">
+			<label class="radio_checker">Text and translate
+				<input type="radio" name="display" value="double" checked>
+				<span class="checkmark"></span>
+			</label>
+			<label class="radio_checker">Translate only
+				<input type="radio" name="display" value="single">
+				<span class="checkmark"></span>
+			</label>
+		</div>
 		<div class="flex-container">
-		<div class="container-1">
-			<h3>Your text</h3>
-			{{ form.input_field }}
+			<div class="container-1">
+				<h3>Your text</h3>
+				{{ form.input_field }}
+			</div>
+			<div class="container-2">
+				<h3>Translate</h3>
+				<div class="text_field">{{ form.output_field }}</div>
+			</div>
 		</div>
-		<div class="container-2">
-			<h3>Translate</h3>
-			<div class="text_field">{{ form.output_field }}</div>
-		</div>
-		</div>
+		
 		<input type="submit" value="TRANSLATE" class="translate-button">
-
 	</form>
+	
+	<script type="text/javascript" src="{% static 'js/main_page.js' %}"></script>
+	
 </body>
 </html>

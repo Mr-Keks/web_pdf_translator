@@ -1,0 +1,125 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+    }
+
+textarea{
+    width: 100%;
+    height: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    }
+
+.translate-button{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    right: 100px;
+    }
+
+ .container-1{
+    flex-grow: 1;
+    margin-left: 30px;
+    }
+
+.container-2{
+    flex-grow: 1;
+    margin-right: 30px;
+    }
+
+ .hide {
+    display: none;
+    }
+
+ /* The container */
+.radio_checker_container{
+    margin-left: 10px;
+    }
+
+.radio_checker {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+
+/* Hide the browser's default radio button */
+.radio_checker input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    }
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    }
+
+/* On mouse-over, add a grey background color */
+.radio_checker:hover input ~ .checkmark {
+    background-color: #ccc;
+    }
+
+/* When the radio button is checked, add a blue background */
+.radio_checker input:checked ~ .checkmark {
+    background-color: #2196F3;
+    }
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+ .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    }
+
+/* Show the indicator (dot/circle) when checked */
+.radio_checker input:checked ~ .checkmark:after {
+    display: block;
+    }
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    }
+
+@media screen and (max-width: 900px) {
+.flex-container{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+.container-1, .container-2{
+        margin: 10px;
+    }
+
+.translate-button{
+        right: 20px;
+    }
+    }
