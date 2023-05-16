@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Description</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/description_page_styles.css' %}" > 
+{% endblock %}
+
+{% block body %}
+    <div class="desc">
+        <h1>About</h1>
+        <p>
+        The PDF Text Translator is a web application designed to assist with removing extra indents that can occur when copying text from PDF documents. 
+        <br>
+        These indents often disrupt the logical flow of the text, especially when using online translation services. Additionally, the application provides an immediate translation feature for the processed text.
+        </p>
+
+        <h2> How to Use? </h2>
+
+        <ul>
+            <li>
+                Copy the text from a PDF document that contains extra indents.
+            </li>
+            <li>
+                Paste the text into the application.
+            </li>
+            <li>
+                Click the "Translate" button to remove the extra indents and correct the text and to instantly translate the processed text into another language.
+            </li>
+        </ul>
+        <p>By utilizing the PDF Text Translator, you can efficiently prepare text from PDF documents for translation or enhance its readability by eliminating unwanted indents.</p>
+
+    </div>
+{% endblock %}

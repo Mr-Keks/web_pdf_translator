@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import FormView
+from django.views.generic import FormView, TemplateView
 
 from googletrans import Translator
 
@@ -10,7 +10,7 @@ import re
 from translator import forms
 
 
-class translate_page(FormView):
+class TranslatePage(FormView):
 	'''
 	Translate page view
 	'''
@@ -54,4 +54,10 @@ class translate_page(FormView):
 		else:
 			return self.form_invalid(form)
 	
-		
+class DescriptionPage(TemplateView):
+	'''
+	View generate template with describing app features.
+	'''
+	
+	template_name = 'describe_page.html'
+	

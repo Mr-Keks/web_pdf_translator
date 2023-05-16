@@ -4,5 +4,6 @@ from translator import views
 
 
 urlpatterns = [
-	path('', views.translate_page.as_view(), name="translate_page"),
+	path('', views.TranslatePage.as_view(), name="translate_page"),
+    path('description/', views.DescriptionPage.as_view(), name="description_page"),
 ]
