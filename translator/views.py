@@ -33,6 +33,8 @@ class TranslatePage(FormView):
 
 			c = 0
 			res = ['']
+			input_field = re.sub(r'-(?=\s*$)', '', input_field)
+			
 			for i in input_field.split('\n'):
 				if i == '\r':
 					c +=1
