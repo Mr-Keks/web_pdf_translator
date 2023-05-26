@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_pdf_translator.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_pdf_translator.settings_production')
 
 application = get_wsgi_application()
