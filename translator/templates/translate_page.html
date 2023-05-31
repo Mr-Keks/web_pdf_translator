@@ -22,17 +22,30 @@
 		</div>
 		<div class="flex-container">
 			<div class="container-1">
-				<h3>Your text</h3>
-				{{ form.input_field }}
+				<div class="copy-block">
+					<h3>Your text</h3>
+					<input type="button" class="copy-button" onclick="copyText('originText')" value="copy">
+				</div>
+				<div class="origin_text">{{ form.input_field }}</div>
 			</div>
 			<div class="container-2">
-				<h3>Translate</h3>
+				<div class="copy-block" style="display: flex;">
+					<h3>Translate</h3>
+					<input type="button" class="copy-button" onclick="copyText('translatedText')" value="copy">
+				</div>
 				<div class="text_field">{{ form.output_field }}</div>
 			</div>
 		</div>
-		
-		<input type="submit" value="TRANSLATE" class="translate-button">
-	</form>
+		<div class="button-group">
+			<input type="button" value="CLEAR" class="form-button translate-form-clean-button clean_button hide" onclick="clearTextarea()">
+			<input type="submit" value="DROP" class="form-button translate-form-drop-button drop_button hide">
+			<input type="submit" value="TRANSLATE" class="form-button translate-form-translate-button">
+		</div>
+		</form>
+		<div id="notification" class="notification"></div>
+		<input type="hidden" id="is-hide" value="{{ is_hide|lower }}">
 
-	<script type="text/javascript" src="{% static 'js/main_page.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'js/translate_page_code.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/buttons.js' %}"></script>
 {% endblock %}

@@ -1,3 +1,4 @@
+// swiching 'translate' and 'text and translate' mode
 const single = document.querySelector('input[value="single"]');
 const double = document.querySelector('input[value="double"]');
 const container1 = document.querySelector('.container-1');
@@ -21,13 +22,12 @@ function updateContainer2Margins() {
     container2.style.marginLeft = '10px';
     container2.style.marginRight = '10px';
   } else {
-	if (container1.classList.contains('hide')) {
-		container2.style.marginLeft = '30px';
-	}
-	else{
-		container2.style.marginLeft = container2InitialMarginLeft;
-		container2.style.marginRight = container2InitialMarginRight;
-	}
+    if (container1.classList.contains('hide')) {
+      container2.style.marginLeft = '30px';
+    } else {
+      container2.style.marginLeft = container2InitialMarginLeft;
+      container2.style.marginRight = container2InitialMarginRight;
+    }
   }
 }
 

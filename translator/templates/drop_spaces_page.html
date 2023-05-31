@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Drop page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/drop_spaces_page_styles.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<h1>Drop spaces</h1>
+
+<form action="{% url 'drop_spaces_page' %}"  method="post">
+    {% csrf_token %}
+    
+    <div class="flex-container">
+        <div class="container-1">
+            <div class="copy-block">
+                <h3>Your text</h3>
+                <input type="button" class="copy-button" onclick="copyText('originText')" value="copy">
+            </div>
+            <div class="form_text">{{ form.input_field }}</div>
+        </div>
+    </div>
+    <div class="button-group">
+        <input type="button" value="CLEAR" class="form-button drop-form-clean-button clean_button hide" onclick="clearTextarea()">
+        <input type="submit" value="DROP" class="form-button drop-form-drop-button">
+    </div>
+</form>
+<div id="notification" class="notification"></div>
+<input type="hidden" id="is-hide" value="{{ is_hide|lower }}">
+
+<script type="text/javascript" src="{% static 'js/buttons.js' %}"></script>
+{% endblock %}

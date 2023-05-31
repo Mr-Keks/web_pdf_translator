@@ -1,0 +1,27 @@
+.container-1{
+    flex-grow: 1;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.drop-form-drop-button{
+    right: 36px;
+}
+
+.drop-form-clean-button{
+    right: 150px;
+}
+
+@media screen and (max-width: 900px) {
+    .container-1{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .drop-form-drop-button{
+        right: 16px;
+    }
+    .drop-form-clean-button{
+        right: 125px;
+    }
+}

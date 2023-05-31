@@ -15,20 +15,80 @@
         These indents often disrupt the logical flow of the text, especially when using online translation services. Additionally, the application provides an immediate translation feature for the processed text.
         </p>
 
-        <h2> How to Use? </h2>
-
-        <ul>
-            <li>
-                Copy the text from a PDF document that contains extra indents.
-            </li>
-            <li>
-                Paste the text into the application.
-            </li>
-            <li>
-                Click the "Translate" button to remove the extra indents and correct the text and to instantly translate the processed text into another language.
-            </li>
-        </ul>
         <p>By utilizing the PDF Text Translator, you can efficiently prepare text from PDF documents for translation or enhance its readability by eliminating unwanted indents.</p>
 
+        <div class="description-section">
+            <label for="toggle-description1" class="description-label">
+                <h2>Translate page <span class="arrow-icon">▼</span></h2>
+            </label>
+            <input type="checkbox" id="toggle-description1" class="description-toggle">
+            <div class="description-content">
+            <!-- Content for Page 1 description -->
+            <h2> How to Use? </h2>
+
+            <ul>
+                <li>
+                    Copy the text from a PDF document that contains extra indents.
+                </li>
+                <li>
+                    Paste the text into the application.
+                </li>
+                <li>
+                    Click the "Translate" button to remove the extra indents and correct the text and to instantly translate the processed text into another language.
+                </li>
+            </ul>
+            <p>
+                If you still have extra spaces, click "Drop" how many times do you need
+            </p>
+            </div>
+          </div>
+          
+          <div class="description-section">
+            <label for="toggle-description2" class="description-label">
+                <h2>Drop page <span class="arrow-icon">▼</span></h2>
+            </label>
+            <input type="checkbox" id="toggle-description2" class="description-toggle">
+            <div class="description-content">
+                <h2> How to Use? </h2>
+                <ul>
+                    <li>
+                        Copy the text from a PDF document that contains extra indents.
+                    </li>
+                    <li>
+                        Paste the text into the application.
+                    </li>
+                    <li>
+                        Click the "Drop" button to remove the extra indents.
+                    </li>
+                </ul>
+                <p>
+                    If you still have extra spaces, click "Drop" how many times do you need
+                </p>
+            </div>
+          </div>
+          
+          
     </div>
+    <script type="text/javascript">
+        // Get the description checkboxes
+        const descriptionCheckboxes = document.querySelectorAll('.description-checkbox');
+
+        // Add event listeners to the checkboxes
+        descriptionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', handleDescriptionToggle);
+        });
+
+        // Function to handle the description toggle
+        function handleDescriptionToggle(event) {
+        const checkbox = event.target;
+        const content = checkbox.nextElementSibling;
+
+        // Toggle the display of the content based on the checkbox state
+        content.style.display = checkbox.checked ? 'block' : 'none';
+        }
+
+
+
+
+    </script>
 {% endblock %}
