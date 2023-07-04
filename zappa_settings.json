@@ -1,7 +1,7 @@
 {
     "web-pdf": {
         "aws_region": "eu-central-1",
-        "django_settings": "web_pdf_translator.settings",
+        "django_settings": "web_pdf_translator.settings_production",
         "profile_name": "default",
         "project_name": "web-pdf-transla",
         "runtime": "python3.9",
