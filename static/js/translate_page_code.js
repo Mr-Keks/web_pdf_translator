@@ -41,3 +41,36 @@ document.querySelectorAll('input[name="display"]').forEach(function (input) {
 
 // Add event listener for window resize
 window.addEventListener('resize', updateContainer2Margins);
+
+// ...
+
+// Function to count the symbols in the textarea
+function countSymbols() {
+  var textarea = document.getElementById('originText');
+  var countElement = document.getElementById('symbolCount');
+
+  var value = textarea.value;
+  var symbolCount = value.length;
+
+  countElement.textContent = symbolCount + '/5000';
+
+  // Check if symbolCount exceeds the maximum limit
+  if (symbolCount >= 5000) {
+    countElement.style.color = "red"
+  } else {
+    countElement.style.color = "inherit"
+  }
+}
+
+// Call the countSymbols function after the page is fully loaded
+window.addEventListener('DOMContentLoaded', function() {
+  countSymbols();
+});
+
+// Add event listener for input changes in the textarea
+document.getElementById('originText').addEventListener('input', countSymbols);
+
+// ...
+
+
+

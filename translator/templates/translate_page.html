@@ -10,6 +10,7 @@
 	<h1>Translate page</h1>
 	<form action="{% url 'translate_page' %}" method="post" class="form_translate">
 		{% csrf_token %}
+
 		<div class="radio_checker_container">
 			<label class="radio_checker">Text and translate
 				<input type="radio" name="display" value="double" checked>
@@ -24,16 +25,29 @@
 			<div class="container-1">
 				<div class="copy-block">
 					<h3>Your text</h3>
+					<select class="language" name="text_language" id="text_lang_view">
+						{% for key, value in languages.items %}
+							<option value="{{ key }}" {% if key == form.text_language.value %}selected{% endif %}>{{ value|capfirst }}</option>
+						{% endfor %}
+					  </select>
+					  
 					<input type="button" class="copy-button" onclick="copyText('originText')" value="copy">
 				</div>
-				<div class="origin_text">{{ form.input_field }}</div>
+				<p style="position: absolute; right: 0; margin: 0;"><span id="symbolCount">0/5000</span>
+				<div class="origin-text">{{ form.input_field }}</div>
 			</div>
 			<div class="container-2">
 				<div class="copy-block" style="display: flex;">
 					<h3>Translate</h3>
+					<select class="language" name="translate_language" id="text_lang_view">
+						{% for key, value in languages.items %}
+						  <option value="{{ key }}" {% if key == form.translate_language.value %}selected{% endif %}>{{ value|capfirst }}</option>
+						{% endfor %}
+					  </select>
+					  
 					<input type="button" class="copy-button" onclick="copyText('translatedText')" value="copy">
 				</div>
-				<div class="text_field">{{ form.output_field }}</div>
+				<div class="text-field">{{ form.output_field }}</div>
 			</div>
 		</div>
 		<div class="button-group">

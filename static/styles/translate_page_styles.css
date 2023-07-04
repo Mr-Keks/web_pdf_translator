@@ -13,6 +13,7 @@
 .container-1{
     flex-grow: 1;
     margin-left: 30px;
+    position: relative;
 }
 
 .container-2{
@@ -93,6 +94,21 @@
 .notification.show {
     opacity: 1;
 }
+
+.text-field, .origin-text{
+    margin-top: 25px
+}
+
+
+/* Language drop list */
+.language{
+    width: 200px; 
+    margin-left: 10px; 
+    padding: 8px; 
+    border-radius: 4px; 
+    border: 1px solid #ccc;
+}
+
 
 @media screen and (max-width: 900px) {
     .translate-form-translate-button{
