@@ -1,10 +1,10 @@
 {
-    "dev": {
+    "web-pdf": {
         "aws_region": "eu-central-1",
         "django_settings": "web_pdf_translator.settings",
         "profile_name": "default",
         "project_name": "web-pdf-transla",
         "runtime": "python3.9",
-        "s3_bucket": ""
+        "s3_bucket": "web-pdf-translator-bucket"
     }
 }
