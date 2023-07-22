@@ -16,6 +16,4 @@ The PDF Text Translator is a web application designed to assist with removing ex
 
 By utilizing the PDF Text Translator, you can efficiently prepare text from PDF documents for translation or enhance its readability by eliminating unwanted indents.
 
-[Link to the PDF Text Translator Web Application](https://example.com)
-
-Feel free to contribute to this project by submitting bug reports, feature requests, or pull requests on [GitHub](https://github.com/your-repository).
+[Link to the PDF Text Translator Web Application](https://589n7cmv64.execute-api.eu-central-1.amazonaws.com/web_pdf)
