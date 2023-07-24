@@ -100,6 +100,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+web_pdf_translator/set_env.py
 
 # Spyder project settings
 .spyderproject
